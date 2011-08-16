@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/council_map.css">
+    <script src='js/raphael.js'></script>
+    <script src='js/jquery.js'></script>
+    <script src='js/underscore.js'></script>
+    <script src='js/map_data.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        var mouseOverDistrict = function(district) {
+          _.each(district.sections, function(section) {
+            section.attr('fill', '#333333');    
+            $('#name').html(district.name);
+          });
+        };
+
+        var mouseOutDistrict = function(district) {
+          _.each(district.sections, function(section) {
+            section.attr('fill', '#888888');    
+            $('#name').html('');
+          });
+        };
+
+        var selectDistrict = function(district) {
+          var toHide = _.without(districts, district);
+          _.map(toHide, function(dist) {
+            _.each(dist.sections, function(section) {
+              section.hide();
+            });
+          });
+        };
+
+        var paper = Raphael($('#canvas')[0], 600, 700);
+        _.each(districts, function(district) {
+          district.sections = new Array();
+          _.each(district.paths, function(path) {
+            var section = paper.path(path).scale(.2,.2,0,0).attr({fill: '#888888', 'stroke-width': 0});   
+            district.sections.push(section);
+            section.mouseover(function(event) {
+              mouseOverDistrict(district);
+            });
+            section.mouseout(function(event) {
+              mouseOutDistrict(district);
+            });
+            section.click(function(event) {
+              selectDistrict(district);
+            });
+          }, this);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id='mainDisplay'>
+      <div id='canvas'/>
+      <span id='name'></span>
+    </div>
+  </body>
+</html>

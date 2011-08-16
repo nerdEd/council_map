@@ -1,0 +1,21 @@
+/**
+ * Colors
+ * Purple: #730046
+ * Green: #BFBB11
+ * Yellow: #FFC200
+ * Orange: #E88801
+ * Red: #C93C00
+ **/
+
+#mainDisplay {
+  width: 950px;
+  height: 700px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+#canvas {
+  display: inline-block;
+  float: left;
+}

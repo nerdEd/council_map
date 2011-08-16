@@ -1,0 +1,14 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Ed Schmalzle
+  Site: http://www.edschmalzle.com
+  Twitter: @nerdEd
+  Location: Baltimore, MD
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software:
