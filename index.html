@@ -9,7 +9,7 @@
       $(document).ready(function() {
         var mouseOverDistrict = function(district) {
           _.each(district.sections, function(section) {
-            section.attr('fill', '#333333');    
+            section.attr('fill', '#E88801');    
             $('#name').html(district.name);
           });
         };
@@ -34,7 +34,7 @@
         _.each(districts, function(district) {
           district.sections = new Array();
           _.each(district.paths, function(path) {
-            var section = paper.path(path).scale(.2,.2,0,0).attr({fill: '#888888', 'stroke-width': 0});   
+            var section = paper.path(path).scale(.2,.2,0,0).attr({stroke: 'white', fill: '#888888', 'stroke-width': 1});   
             district.sections.push(section);
             section.mouseover(function(event) {
               mouseOverDistrict(district);
@@ -43,7 +43,7 @@
               mouseOutDistrict(district);
             });
             section.click(function(event) {
-              selectDistrict(district);
+              <!--selectDistrict(district);-->
             });
           }, this);
         });
@@ -52,6 +52,9 @@
   </head>
 
   <body>
+    <div id='header'>
+
+    </div>
     <div id='mainDisplay'>
       <div id='canvas'/>
       <span id='name'></span>

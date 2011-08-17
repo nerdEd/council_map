@@ -7,12 +7,29 @@
  * Red: #C93C00
  **/
 
-#mainDisplay {
+body {
+  background-color: #C93C00;
+}
+
+#mainDisplay, #header {
+  background-color: #888888;
+  border-radius: 20px;
   width: 950px;
-  height: 700px;
+  height: 650px;
   margin: 10px auto;
   padding: 10px;
-  border: 1px solid red;
+}
+
+body {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+#header {
+  height: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-top: 0px;
 }
 
 #canvas {
