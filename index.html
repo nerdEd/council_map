@@ -16,7 +16,7 @@
 
         var mouseOutDistrict = function(district) {
           _.each(district.sections, function(section) {
-            section.attr('fill', '#888888');    
+            section.attr('fill', '#D6D1C1');    
             $('#name').html('');
           });
         };
@@ -30,11 +30,11 @@
           });
         };
 
-        var paper = Raphael($('#canvas')[0], 600, 700);
+        var paper = Raphael($('#canvas')[0], 525, 700);
         _.each(districts, function(district) {
           district.sections = new Array();
           _.each(district.paths, function(path) {
-            var section = paper.path(path).scale(.2,.2,0,0).attr({stroke: 'white', fill: '#888888', 'stroke-width': 1});   
+            var section = paper.path(path).scale(.2,.2,0,0).attr({stroke: 'black', fill: '#D6D1C1', 'stroke-width': 1});   
             district.sections.push(section);
             section.mouseover(function(event) {
               mouseOverDistrict(district);
@@ -57,7 +57,9 @@
     </div>
     <div id='mainDisplay'>
       <div id='canvas'/>
-      <span id='name'></span>
+      <div id='info'>
+        <span id='name'></span>
+      </div>
     </div>
   </body>
 </html>

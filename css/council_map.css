@@ -5,14 +5,14 @@
  * Yellow: #FFC200
  * Orange: #E88801
  * Red: #C93C00
+ * Cream: #D6D1C1
  **/
 
 body {
-  background-color: #C93C00;
+  background-color: #D6D1C1;
 }
 
 #mainDisplay, #header {
-  background-color: #888888;
   border-radius: 20px;
   width: 950px;
   height: 650px;
@@ -20,15 +20,24 @@ body {
   padding: 10px;
 }
 
-body {
-  padding-top: 0px;
-  margin-top: 0px;
+#info {
+  margin-right: 0px;
+  display: inline-block;
+  background-color: white;
+  width: 415px;
+  height: 600px;
 }
 
 #header {
+  background-image: url('../img/RedNoise.png');
   height: 20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  margin-top: 0px;
+}
+
+body {
+  padding-top: 0px;
   margin-top: 0px;
 }
 
