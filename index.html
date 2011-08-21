@@ -30,7 +30,7 @@
           });
         };
 
-        var paper = Raphael($('#canvas')[0], 525, 700);
+        var paper = Raphael($('#canvas')[0], 510, 700);
         _.each(districts, function(district) {
           district.sections = new Array();
           _.each(district.paths, function(path) {
@@ -56,7 +56,7 @@
 
     </div>
     <div id='mainDisplay'>
-      <div id='canvas'/>
+      <div id='canvas'></div>
       <div id='info'>
         <span id='name'></span>
       </div>

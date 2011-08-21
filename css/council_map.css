@@ -14,18 +14,25 @@ body {
 
 #mainDisplay, #header {
   border-radius: 20px;
-  width: 950px;
+  width: 1050px;
   height: 650px;
   margin: 10px auto;
   padding: 10px;
 }
 
+#mainDisplay {
+  padding: 0px;
+}
+
 #info {
-  margin-right: 0px;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
   display: inline-block;
   background-color: white;
-  width: 415px;
+  width: 490px;
   height: 600px;
+  float: right;
 }
 
 #header {
@@ -42,6 +49,9 @@ body {
 }
 
 #canvas {
+  margin: 0px;
+  padding: 0px;
+  width: 510px;
   display: inline-block;
   float: left;
 }
