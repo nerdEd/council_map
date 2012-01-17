@@ -7,6 +7,7 @@
     <script src='js/map_data.js'></script>
     <script type='text/javascript'>
       $(document).ready(function() {
+        var districtSelected = false;
         var mouseOverDistrict = function(district) {
           _.each(district.sections, function(section) {
             section.attr('fill', '#E88801');    
@@ -21,6 +22,15 @@
           });
         };
 
+        var showAllDistricts = function() {
+          _.map(districts, function(dist) {
+            _.each(dist.sections, function(section) {
+              section.show();
+            });
+          });
+          districtSelected = false;
+        };
+
         var selectDistrict = function(district) {
           var toHide = _.without(districts, district);
           _.map(toHide, function(dist) {
@@ -28,6 +38,7 @@
               section.hide();
             });
           });
+          districtSelected = true;
         };
 
         var paper = Raphael($('#canvas')[0], 510, 700);
@@ -43,7 +54,11 @@
               mouseOutDistrict(district);
             });
             section.click(function(event) {
-              <!--selectDistrict(district);-->
+              if(districtSelected) {
+                showAllDistricts();
+              } else {
+                selectDistrict(district);
+              }
             });
           }, this);
         });
